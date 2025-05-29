@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Somali-English Sentiment Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 40px; }
+        textarea { width: 80%; height: 150px; margin-top: 20px; }
+        button { padding: 10px 20px; font-size: 16px; margin-top: 10px; }
+        .result { margin-top: 20px; font-size: 20px; color: green; }
+    </style>
+</head>
+<body>
+    <h1>Somali-English Sentiment Analyzer</h1>
+    <form method="post">
+        <textarea name="text" placeholder="Enter Somali or English text">{{ user_input }}</textarea><br>
+        <button type="submit">Analyze Sentiment</button>
+    </form>
+
+    {% if sentiment %}
+        <div class="result"><strong>Sentiment:</strong> {{ sentiment }}</div>
+    {% endif %}
+</body>
+</html>
